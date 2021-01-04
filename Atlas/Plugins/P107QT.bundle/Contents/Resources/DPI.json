@@ -1,0 +1,60 @@
+{
+  "app_setup" : {
+    "fullscreen" : false,
+    "keepResultsInUI" : true,
+    "testMode" : [
+
+    ],
+    "confirmQuit" : false,
+    "customTestMode" : [
+      {
+        "name" : "GRR",
+        "base-test-mode" : "LineBringup"
+      }
+    ],
+    "stopButton" : false,
+    "setTopology" : true
+  },
+  "system" : {
+    "receive" : "YES",
+    "stationMode" : "eng",
+    "initBaudRate" : false,
+    "maxLoopCount" : 1,
+    "product" : "StationInfo.product()",
+    "DeleteProcessLogsAfterDays" : "2",
+    "withHVC" : false,
+    "memory" : {
+      "station_type" : "StationInfo.station_type()",
+      "limit_version" : "v1.0.0",
+      "fixture_uart_path" : "\/dev\/cu.usbserial-FIXTURE",
+      "sw_version" : "v1.6.6_113OVB.135"
+    },
+    "auto_trigger" : true,
+    "command" : "HAHA,@_@",
+    "topology" : {
+      "enableDisappear" : true,
+      "fixtureManualStartDevice" : "FIXTURE",
+      "units" : {
+        "unit_1" : {
+          "unit_transports" : "\/dev\/cu.usbmodem1417301",
+          "enable" : true,
+          "device" : "Dut",
+          "fixture_path" : {
+            "Fixture_URL" : "uart:\/\/\/dev\/cu.usbserial-Fixture1",
+            "Dut_URL" : "uart:\/\/\/dev\/cu.usbmodem141601"
+          },
+          "userinfo" : {
+            "FIXTURE" : "\/dev\/cu.usbmodem14101"
+          }
+        }
+      }
+    },
+    "build_stage" : "StationInfo.build_stage()"
+  },
+  "station_setup" : {
+
+  },
+  "unit_setup" : {
+
+  }
+}

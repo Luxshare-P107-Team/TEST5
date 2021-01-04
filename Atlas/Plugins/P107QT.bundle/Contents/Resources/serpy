@@ -1,0 +1,16 @@
+# -*- coding:UTF-8 -*-
+import serial.tools.list_ports
+ports=list(serial.tools.list_ports.comports())
+array = []
+for port in ports:
+    port_list=list(port)
+#    print port_list
+    port_list[-1]=port_list[-1].split(' ')[-1].split('=')[-1]
+    port_list[-1]=port_list[-1].replace('.','')
+    name = port_list[0]
+    product = port_list[1]
+    location = port_list[2]
+    dict = {"name": name, "product": product, "location": location}
+    array.append(dict)
+print(array)
+
